@@ -1,18 +1,20 @@
-package net.catalog.creational.factory;
+package net.catalog.creational.abstractFactory;
+
 
 public class Main {
     public static void main(String[] args) {
         String placeType = "Home";
-        CoffeeBreakFactory coffeeBreakFactory = createPlaceType(placeType);
-        CoffeeBreak coffeeBreak = coffeeBreakFactory.create();
-        coffeeBreak.writeDrink();
+        StrongCoffeeFactory strongCoffeeFactory = createPlaceType(placeType);
+        StrongCoffee strongCoffee = strongCoffeeFactory.create();
+        strongCoffee.writeDrink();
+        strongCoffee.byDrink();
+
     }
 
-    static CoffeeBreakFactory createPlaceType(String type) {
+    static StrongCoffeeFactory createPlaceType(String type) {
         return switch (type) {
             case "Home" -> new HomeCoffeeFactory();
             case "Work" -> new WorkCoffeeFactory();
-            case "Travel" -> new TravelCoffeeFactory();
             default -> throw new RuntimeException(type + " is unknown specialty.");
         };
     }
