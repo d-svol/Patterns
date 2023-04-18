@@ -1,5 +1,5 @@
 package net.catalog.creational.factory;
 
-public interface CoffeeBreak {
+public interface Coffee {
     void writeDrink();
 }

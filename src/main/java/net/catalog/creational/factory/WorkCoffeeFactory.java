@@ -1,8 +1,8 @@
 package net.catalog.creational.factory;
 
-public class WorkCoffeeFactory implements  CoffeeBreakFactory{
+public class WorkCoffeeFactory implements CoffeeFactory {
     @Override
-    public CoffeeBreak create() {
+    public Coffee create() {
         return new WorkCoffee();
     }
 }

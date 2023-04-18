@@ -3,12 +3,12 @@ package net.catalog.creational.factory;
 public class Main {
     public static void main(String[] args) {
         String placeType = "Home";
-        CoffeeBreakFactory coffeeBreakFactory = createPlaceType(placeType);
-        CoffeeBreak coffeeBreak = coffeeBreakFactory.create();
-        coffeeBreak.writeDrink();
+        CoffeeFactory coffeeFactory = createPlaceType(placeType);
+        Coffee coffee = coffeeFactory.create();
+        coffee.writeDrink();
     }
 
-    static CoffeeBreakFactory createPlaceType(String type) {
+    static CoffeeFactory createPlaceType(String type) {
         return switch (type) {
             case "Home" -> new HomeCoffeeFactory();
             case "Work" -> new WorkCoffeeFactory();
